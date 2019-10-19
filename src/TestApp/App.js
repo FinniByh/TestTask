@@ -30,11 +30,11 @@ export default class App extends React.Component {
   updateFilter = () => {
     let BufferPosts
     if (this.state.ThemeFilter !== 'All') {
-      BufferPosts = this.state.Posts.filter(el => el.Theme === this.state.Filter)
+      BufferPosts = this.state.Posts.filter(el => el.Theme === this.state.ThemeFilter)
     } else
       BufferPosts = this.state.Posts
     if (this.state.AuthorFilter) {
-      BufferPosts = BufferPosts.filter(el => el.Name.toLowerCase().indexOf(this.state.AuthorFilter) >= 0)
+      BufferPosts = BufferPosts.filter(el => el.Name.toLowerCase().indexOf(this.state.AuthorFilter.toLowerCase()) >= 0)
     }
     this.setState({PostsForView: BufferPosts})
   }
