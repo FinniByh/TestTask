@@ -8,27 +8,42 @@ export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      Filter: 'all',
+      Filter: 'All',
       Posts: [],
+      PostsForView: [],
     }
   }
 
   setFilter = (FilterValue) => {
-    this.setState({Filter: FilterValue.target.value});
+    this.setState({Filter: FilterValue.target.value}, () => {
+      this.updateFilter();
+    });
+  }
+
+  updateFilter = () => {
+    let BufferPosts
+    if (this.state.Filter !== 'All') {
+      BufferPosts = this.state.Posts.filter(el => el.Theme === this.state.Filter)
+    } else
+      BufferPosts = this.state.Posts
+    this.setState({PostsForView: BufferPosts})
   }
 
   addPost = (PostInfo, PostDate) => {
     let BufferArray = this.state.Posts
     PostInfo.Date = `${PostDate.getHours()}:${PostDate.getMinutes()} ${PostDate.getDate()}.${PostDate.getMonth()+1}.${PostDate.getFullYear()}`
     BufferArray.push(PostInfo)
-    this.setState({Posts: BufferArray})
+    this.setState({Posts: BufferArray}, () => {
+      this.updateFilter()
+    });
   }
 
   render() {
     return(
       <div>
         <Filter set={this.setFilter}/>
-        {this.state.Posts.map( (el, index) => 
+        {
+          this.state.PostsForView.map( (el, index) => 
           <Post 
             name={el.Name}
             text={el.PostText}
@@ -36,7 +51,7 @@ export default class App extends React.Component {
             date={el.Date}
             key={index}
           />
-        )}
+          ) }
         <CreateWindow submit={this.addPost}/>
       </div>
     );
