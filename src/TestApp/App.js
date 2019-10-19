@@ -42,16 +42,18 @@ export default class App extends React.Component {
     return(
       <div className='container'>
         <Filter set={this.setFilter}/>
-        {
-          this.state.PostsForView.map( (el, index) => 
-          <Post 
+        <div className='posts-container'>
+          {
+            this.state.PostsForView.map( (el, index) => 
+            <Post 
             name={el.Name}
             text={el.PostText}
             theme={el.Theme}
             date={el.Date}
             key={index}
-          />
+            />
           ) }
+        </div>
         <CreateWindow submit={this.addPost}/>
       </div>
     );

@@ -10,6 +10,7 @@ body {
 }
 
 .filter-container {
+  height: 4vh;
   padding: 10px 0 15px 30px;
   background: #e5e5e5;
   font-family: sans-serif;
@@ -28,6 +29,7 @@ body {
 }
 
 .create-container {
+  height: 25vh;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -48,7 +50,7 @@ body {
   height: 100px;
   resize: none;
   font-size: 12pt;
-  color: white;
+  color: grey;
   border-radius: 10px;
   padding: 5px;
 }
@@ -99,6 +101,23 @@ body {
   background: white;
   font-size: 14pt;
   border-radius: 10px;
+}
+
+.posts-container {
+  max-height: 61vh;
+  padding-bottom: 20px;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  background: none;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: grey;
+  border: none;
 }
 
 .post-body {
