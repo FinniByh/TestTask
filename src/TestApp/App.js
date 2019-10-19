@@ -42,7 +42,9 @@ export default class App extends React.Component {
   addPost = (PostInfo) => {
     let BufferArray = this.state.Posts
     let PostDate = new Date();
-    PostInfo.Date = `${PostDate.getHours()}:${PostDate.getMinutes()} ${PostDate.getDate()}.${PostDate.getMonth()+1}.${PostDate.getFullYear()}`
+    let PostHours = PostDate.getHours() < 10? '0'+PostDate.getHours(): PostDate.getHours()
+    let PostMinutes = PostDate.getMinutes() < 10? '0'+PostDate.getMinutes(): PostDate.getMinutes()
+    PostInfo.Date = `${PostHours}:${PostMinutes}`
     BufferArray.unshift(PostInfo)
     this.setState({Posts: BufferArray}, () => {
       this.updateFilter()

@@ -24,10 +24,6 @@ body {
   transition: color 1s;
 }
 
-.theme-select-menu:hover {
-  color: red;
-}
-
 .create-container {
   height: 25vh;
   position: fixed;
