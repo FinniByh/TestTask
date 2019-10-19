@@ -29,8 +29,9 @@ export default class App extends React.Component {
     this.setState({PostsForView: BufferPosts})
   }
 
-  addPost = (PostInfo, PostDate) => {
+  addPost = (PostInfo) => {
     let BufferArray = this.state.Posts
+    let PostDate = new Date();
     PostInfo.Date = `${PostDate.getHours()}:${PostDate.getMinutes()} ${PostDate.getDate()}.${PostDate.getMonth()+1}.${PostDate.getFullYear()}`
     BufferArray.unshift(PostInfo)
     this.setState({Posts: BufferArray}, () => {

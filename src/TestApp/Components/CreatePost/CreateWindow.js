@@ -13,8 +13,7 @@ export default class CreateWindow extends React.Component {
 
   sendPostInfo = () => {
     if (!this.state.Name) {alert('Please enter your name'); return}
-    let PostDate = new Date();
-    this.props.submit(this.state, PostDate);
+    this.props.submit(this.state);
   }
 
   ChangeText = (textarea) => {
