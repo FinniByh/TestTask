@@ -17,7 +17,7 @@ body {
   font-size: 12pt;
 }
 
-.theme-select-menu {
+.theme-select-menu, .author-filtering {
   width: 100px;
   height: 30px;
   margin-left: 20px;

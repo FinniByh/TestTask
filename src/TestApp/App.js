@@ -8,24 +8,34 @@ export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      Filter: 'All',
+      ThemeFilter: 'All',
+      AuthorFilter: '',
       Posts: [],
       PostsForView: [],
     }
   }
 
-  setFilter = (FilterValue) => {
-    this.setState({Filter: FilterValue.target.value}, () => {
+  setTheme = (FilterValue) => {
+    this.setState({ThemeFilter: FilterValue.target.value}, () => {
       this.updateFilter();
     });
   }
 
+  setAuthor = (FilterValue) => {
+    this.setState({AuthorFilter: FilterValue.target.value}, ()=> {
+      this.updateFilter();
+    })
+  }
+
   updateFilter = () => {
     let BufferPosts
-    if (this.state.Filter !== 'All') {
+    if (this.state.ThemeFilter !== 'All') {
       BufferPosts = this.state.Posts.filter(el => el.Theme === this.state.Filter)
     } else
       BufferPosts = this.state.Posts
+    if (this.state.AuthorFilter) {
+      BufferPosts = BufferPosts.filter(el => el.Name.toLowerCase().indexOf(this.state.AuthorFilter) >= 0)
+    }
     this.setState({PostsForView: BufferPosts})
   }
 
@@ -42,7 +52,10 @@ export default class App extends React.Component {
   render() {
     return(
       <div className='container'>
-        <Filter set={this.setFilter}/>
+        <Filter 
+          setTheme={this.setTheme}
+          setAuthor={this.setAuthor}
+        />
         <div className='posts-container'>
           {
             this.state.PostsForView.map( (el, index) => 
