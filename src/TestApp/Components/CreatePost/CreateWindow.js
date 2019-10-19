@@ -26,6 +26,7 @@ export default class CreateWindow extends React.Component {
   }
 
   ChangeName = (inputName) => {
+    if (inputName.target.value.length > 40) { alert('Your name too long'); return } 
     this.setState({Name: inputName.target.value})
   }
 

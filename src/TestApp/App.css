@@ -84,7 +84,7 @@ body {
   margin-left: 20px;
   width: 150px;
   height: 30px;
-  color: white;
+  color: grey;
   font-size: 12pt;
   padding-left: 10px;
   border-radius: 10px;
@@ -133,6 +133,7 @@ body {
   font-size: 14pt;
   font-weight: bold;
   color: black;
+  word-wrap: break-word;
 }
 
 .post-content {
@@ -142,6 +143,7 @@ body {
   width: 80%;
   background: white;
   border-radius: 20px;
+  word-wrap: break-word;
 }
 
 .post-date {
