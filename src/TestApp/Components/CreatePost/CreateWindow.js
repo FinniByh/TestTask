@@ -8,12 +8,16 @@ export default class CreateWindow extends React.Component {
       PostText: '',
       Name: '',
       Theme: 'Nature',
+      TextAreaDefault: 'Enter your message here...',
     }
+
+    this.AreaClear = React.createRef();
   }
 
   sendPostInfo = () => {
     if (!this.state.Name) {alert('Please enter your name'); return}
     this.props.submit(this.state);
+    this.AreaClear.current.value = 'Enter your message here...'
   }
 
   ChangeText = (textarea) => {
@@ -29,6 +33,14 @@ export default class CreateWindow extends React.Component {
     this.setState({Name: inputName.target.value})
   }
 
+  TextareaFocus = (textarea) => {
+    if (textarea.target.value === this.state.TextAreaDefault) textarea.target.value = '';
+  }
+
+  TextareaBlur = (textarea) => {
+    if (!textarea.target.value) textarea.target.value = this.state.TextAreaDefault;
+  }
+
   render() {
     return(
       <div className='create-container'>
@@ -36,8 +48,11 @@ export default class CreateWindow extends React.Component {
           <label>
             <textarea 
               className='text-area'
-              defaultValue='Enter your message here...' 
+              defaultValue={this.state.TextAreaDefault} 
               onChange={this.ChangeText}
+              onFocus={this.TextareaFocus}
+              onBlur={this.TextareaBlur}
+              ref={this.AreaClear}
             />
           </label>
           <label className='choose-theme'>Choose post theme
