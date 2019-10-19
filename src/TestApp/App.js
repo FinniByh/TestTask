@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Filter from './Components/Filter/Filter'
 import CreateWindow from './Components/CreatePost/CreateWindow'
+import Post from './Components/Post/Post'
 
 export default class App extends React.Component {
   constructor() {
@@ -27,6 +28,15 @@ export default class App extends React.Component {
     return(
       <div>
         <Filter set={this.setFilter}/>
+        {this.state.Posts.map( (el, index) => 
+          <Post 
+            name={el.Name}
+            text={el.PostText}
+            theme={el.Theme}
+            date={el.Date}
+            key={index}
+          />
+        )}
         <CreateWindow submit={this.addPost}/>
       </div>
     );

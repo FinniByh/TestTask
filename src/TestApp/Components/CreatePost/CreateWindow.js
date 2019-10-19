@@ -3,11 +3,11 @@ import React from 'react'
 export default class CreateWindow extends React.Component {
   constructor(props) {
     super(props)
-    
+
     this.state = {
       PostText: '',
       Name: '',
-      Theme: 'Nature'
+      Theme: 'Nature',
     }
   }
 
@@ -34,8 +34,10 @@ export default class CreateWindow extends React.Component {
       <div>
         <form>
           <label>
-            <textarea onChange={this.ChangeText}>
-              Enter post...
+            <textarea 
+              defaultvalue='Enter post...' 
+              onChange={this.ChangeText}>
+                Enter your post here...
             </textarea>
           </label>
           <label>Choose post theme
