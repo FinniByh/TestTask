@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+body {
+  background: white;
+}
+
+.filter-container {
+  padding: 10px 0 15px 30px;
+  background: #e5e5e5;
+  font-family: sans-serif;
+  font-size: 12pt;
+}
+
+.theme-select-menu {
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+  transition: color 1s;
+}
+
+.theme-select-menu:hover {
+  color: red;
+}
+
+.create-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: #e5e5e5;
+  font-family: sans-serif;
+}
+
+.create-main-info {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-area {
+  min-width: 300px;
+  width: 500px;
+  height: 100px;
+  resize: none;
+  font-size: 12pt;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.text-area:focus {
+  color: black;
+}
+
+.choose-theme {
+  padding: 10px;
+  font-size: 14pt;
+}
+
+.choose-theme select {
+  margin: 15px;
+  height: 30px;
+  width: 100px;
+}
+
+.public-container {
+  margin: 10px;
+  font-family: sans-serif;
+}
+
+.enter-name {
+  margin: 0 30px;
+  font-size: 14pt;
+}
+
+.enter-name input {
+  margin-left: 20px;
+  width: 150px;
+  height: 30px;
+  color: white;
+  font-size: 12pt;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
+.enter-name input:focus {
+  color: black;
+}
+
+.button-submit {
+  width: 140px;
+  height: 40px;
+  padding: 10px;
+  background: white;
+  font-size: 14pt;
+  border-radius: 10px;
+}
+
+.post-body {
+  width: 40%;
+  margin: 30px 0 0 15px;
+  padding: 20px;
+  background: #e5e5e5;
+  border-radius: 20px;
+  font-family: sans-serif;
+}
+
+.post-author {
+  font-size: 14pt;
+  font-weight: bold;
+  color: black;
+}
+
+.post-content {
+  margin: 30px 0 5px 30px;
+  padding: 15px;
+  color: black;
+  width: 80%;
+  background: white;
+  border-radius: 20px;
+}
+
+.post-date {
+  color: black;
+  font-size: 8pt;
+  text-align: right;
+}

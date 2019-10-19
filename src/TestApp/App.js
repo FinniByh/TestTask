@@ -32,7 +32,7 @@ export default class App extends React.Component {
   addPost = (PostInfo, PostDate) => {
     let BufferArray = this.state.Posts
     PostInfo.Date = `${PostDate.getHours()}:${PostDate.getMinutes()} ${PostDate.getDate()}.${PostDate.getMonth()+1}.${PostDate.getFullYear()}`
-    BufferArray.push(PostInfo)
+    BufferArray.unshift(PostInfo)
     this.setState({Posts: BufferArray}, () => {
       this.updateFilter()
     });
@@ -40,7 +40,7 @@ export default class App extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='container'>
         <Filter set={this.setFilter}/>
         {
           this.state.PostsForView.map( (el, index) => 

@@ -31,29 +31,29 @@ export default class CreateWindow extends React.Component {
 
   render() {
     return(
-      <div>
-        <form>
+      <div className='create-container'>
+        <form className='create-main-info'>
           <label>
             <textarea 
-              defaultvalue='Enter post...' 
-              onChange={this.ChangeText}>
-                Enter your post here...
-            </textarea>
+              className='text-area'
+              defaultValue='Enter your message here...' 
+              onChange={this.ChangeText}
+            />
           </label>
-          <label>Choose post theme
-            <select onChange={this.ChangeTheme}>
+          <label className='choose-theme'>Choose post theme
+            <select className='select-theme-menu' onChange={this.ChangeTheme}>
               <option value="Nature">Nature</option>
               <option value="Health">Health</option>
               <option value="Lifestyle">Lifestyle</option>
             </select>
           </label>
         </form>
-        <form>
-          <label>Your name
+        <form className='public-container'>
+          <label className='enter-name'>Your name
             <input onChange={this.ChangeName}>
             </input>
           </label>
-          <button type='button' onClick={this.sendPostInfo}>Submit</button>
+          <button type='button' onClick={this.sendPostInfo} className='button-submit'>Submit</button>
         </form>
       </div>
     );
