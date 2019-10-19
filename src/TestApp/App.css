@@ -129,7 +129,7 @@ body {
   font-family: sans-serif;
 }
 
-.post-author {
+.post-theme {
   font-size: 14pt;
   font-weight: bold;
   color: black;
@@ -150,4 +150,10 @@ body {
   color: black;
   font-size: 8pt;
   text-align: right;
+}
+
+.post-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
