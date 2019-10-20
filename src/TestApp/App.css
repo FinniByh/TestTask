@@ -153,3 +153,86 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 800px) {
+  .post-body {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .create-main-info {
+    flex-direction: column-reverse;
+  }
+
+  .post-body {
+    padding: 10px;
+  }
+
+  .text-area {
+    width: 90vw;
+  }
+
+  .create-container {
+    height: 40vh;
+  }
+
+  .posts-container {
+    height: 46vh;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .filter-container {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-body {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .post-content {
+    margin-top: 0;
+  }
+
+  .author-filtering {
+    margin-top: 10px;
+  }
+
+  .text-area {
+    height: 5vh;
+    min-width: 200px;
+    width: 80vw;
+  }
+
+  .create-container {
+    height: 44vh;
+    padding-top: 5px;
+  }
+
+  .posts-container {
+    height: 36vh;
+  }
+
+  .public-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .public-container * {
+    margin-top: 5px;
+  }
+
+  .enter-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .enter-name input {
+    margin-left: 0;
+  }
+}

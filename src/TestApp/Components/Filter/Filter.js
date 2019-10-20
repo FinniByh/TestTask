@@ -3,8 +3,8 @@ import React from 'react'
 export default function Filter (props){
 
   return(
-    <div className='filter-container'>
-      <form>
+    <div >
+      <form className='filter-container'>
         <label className='theme-filter-label'>
           Filter by theme:
           <select onChange={props.setTheme} className='theme-select-menu'>
