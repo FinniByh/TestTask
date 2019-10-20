@@ -12,16 +12,23 @@ body {
 .filter-container {
   height: 4vh;
   padding: 10px 0 15px 30px;
-  background: #e5e5e5;
+  background: #62B1D0;
   font-family: sans-serif;
   font-size: 12pt;
+  color: white;
 }
 
 .theme-select-menu, .author-filtering {
   width: 100px;
   height: 30px;
   margin-left: 20px;
-  transition: color 1s;
+  border-radius: 10px;
+  background: #0776A0;
+  color: white;
+}
+
+.author-filtering {
+  padding: 0 10px;
 }
 
 .create-container {
@@ -30,7 +37,7 @@ body {
   bottom: 0;
   width: 100%;
   padding: 20px;
-  background: #e5e5e5;
+  background: #62B1D0;
   font-family: sans-serif;
 }
 
@@ -46,24 +53,28 @@ body {
   height: 100px;
   resize: none;
   font-size: 12pt;
-  color: grey;
+  color: #024C68;
+  background: #0776A0;
   border-radius: 10px;
   padding: 5px;
 }
 
 .text-area:focus {
-  color: black;
+  color: white;
 }
 
 .choose-theme {
   padding: 10px;
   font-size: 14pt;
+  color: white;
 }
 
 .choose-theme select {
   margin: 15px;
   height: 30px;
   width: 100px;
+  background: #0776A0;
+  color: white;
 }
 
 .public-container {
@@ -74,29 +85,32 @@ body {
 .enter-name {
   margin: 0 30px;
   font-size: 14pt;
+  color: white;
 }
 
 .enter-name input {
   margin-left: 20px;
   width: 150px;
   height: 30px;
-  color: grey;
+  color: #024C68;
+  background: #0776A0;
   font-size: 12pt;
   padding-left: 10px;
   border-radius: 10px;
 }
 
 .enter-name input:focus {
-  color: black;
+  color: white;
 }
 
 .button-submit {
   width: 140px;
   height: 40px;
   padding: 10px;
-  background: white;
   font-size: 14pt;
   border-radius: 10px;
+  color: white;
+  background: #0776A0;
 }
 
 .posts-container {
@@ -112,7 +126,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: grey;
+  background: #0776A0;
   border: none;
 }
 
@@ -120,7 +134,7 @@ body {
   width: 40%;
   margin: 30px 0 0 15px;
   padding: 20px;
-  background: #e5e5e5;
+  background: #62B1D0;
   border-radius: 20px;
   font-family: sans-serif;
 }
@@ -128,7 +142,7 @@ body {
 .post-theme {
   font-size: 14pt;
   font-weight: bold;
-  color: black;
+  color: #024C68;
   word-wrap: break-word;
 }
 
